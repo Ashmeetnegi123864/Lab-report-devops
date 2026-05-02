@@ -55,25 +55,25 @@ Containers virtualize at the operating system level. They share the host OS kern
 ## Part A: Install Vagrant and Automate VM
 
 ### 1. Install Oracle VM
-![Oracle VM Installation](images/ss1.png)
+![Oracle VM Installation](ss1.png)
 
 ### 2. Download Vagrant
-![Vagrant Download](images/ss2.png)
+![Vagrant Download](ss2.png)
 
 ### 3. Run Vagrant to Automate the VM
-![Vagrant VM Automation](images/ss3.png)
+![Vagrant VM Automation](ss3.png)
 
 ### 4. Run SSH into Vagrant
-![Vagrant SSH Connection](images/ss4.png)
+![Vagrant SSH Connection](ss4.png)
 
 ### 5. Perform Operations Inside VM
-![VM Operations](images/ss5.png)
+![VM Operations](ss5.png)
 
 ### 6. Halt the Vagrant
-![Vagrant Halt](images/ss6.png)
+![Vagrant Halt](ss6.png)
 
 ### 7. Destroy Vagrant
-![Vagrant Destroy](images/ss7.png)
+![Vagrant Destroy](ss7.png)
 
 ## **Experiment Setup – Part B: Containers using WSL (Windows)**
 
@@ -236,7 +236,7 @@ docker pull nginx
 ```
 
 ### 📸 Output
-![Docker Version](images/ss1.png)
+![Docker Version](Lab2(1).png)
 
 ---
 
@@ -251,7 +251,7 @@ Open in browser:
 http://localhost:8080
 
 ### 📸 Output
-![Pull Image](images/ss2.png)
+![Pull Image](Lab2(2).png)
 
 ---
 
@@ -262,7 +262,7 @@ docker ps
 ```
 
 ### 📸 Output
-![Docker Run](images/ss3.png)
+![Docker Run](Lab2(3).png)
 
 ---
 
@@ -273,7 +273,7 @@ docker stop <container_id>
 ```
 
 ### 📸 Output
-![Docker PS](images/ss4.png)
+![Docker PS](Lab2(4).png)
 
 ---
 
@@ -284,7 +284,7 @@ docker rm <container_id>
 ```
 
 ### 📸 Output
-![Docker Stop](images/ss5.png)
+![Docker Stop](Lab2(5).png)
 
 ---
 
@@ -295,7 +295,7 @@ docker rmi nginx
 ```
 
 ### 📸 Output
-![Docker RMI](images/ss6.png)
+![Docker RMI](Lab2(6).png)
 
 ---
 
@@ -359,25 +359,25 @@ docker --version
 ```bash
 docker pull nginx:latest
 ```
-![Step](images/ss1.png)
+![Step](Lab3(1).png)
 
 ### Run Container
 ```bash
 docker run -d --name nginx-official -p 8080:80 nginx
 ```
-![Step](images/ss2.png)
+![Step](Lab3(2).png)
 
 ### Verify
 ```bash
 curl http://localhost:8080
 ```
-![Step](images/ss3.png)
+![Step](Lab3(3).png)
 
 ### Image Check
 ```bash
 docker images nginx
 ```
-![Step](images/ss4.png)
+![Step](Lab3(4).png)
 
 ---
 
@@ -387,19 +387,19 @@ docker images nginx
 ```bash
 docker build -t nginx-ubuntu .
 ```
-![Step](images/ss5.png)
+![Step](Lab3(5).png)
 
 ### Run Container
 ```bash
 docker run -d --name nginx-ubuntu -p 8081:80 nginx-ubuntu
 ```
-![Step](images/ss6.png)
+![Step](Lab3(6).png)
 
 ### Image Size
 ```bash
 docker images nginx-ubuntu
 ```
-![Step](images/ss7.png)
+![Step](Lab3(7).png)
 
 ---
 
@@ -409,19 +409,19 @@ docker images nginx-ubuntu
 ```bash
 docker build -t nginx-alpine .
 ```
-![Step](images/ss8.png)
+![Step](Lab3(8).png)
 
 ### Run Container
 ```bash
 docker run -d --name nginx-alpine -p 8082:80 nginx-alpine
 ```
-![Step](images/ss9.png)
+![Step](Lab3(9).png)
 
 ### Image Size
 ```bash
 docker images nginx-alpine
 ```
-![Step](images/ss10.png)
+![Step](Lab3(10).png)
 
 ---
 
@@ -431,7 +431,7 @@ docker images nginx-alpine
 ```bash
 docker images | grep nginx
 ```
-![Step](images/ss11.png)
+![Step](Lab3(11).png)
 
 ### Inspect Layers
 ```bash
@@ -439,8 +439,8 @@ docker history nginx
 docker history nginx-ubuntu
 docker history nginx-alpine
 ```
-![Step](images/ss12.png)
-![Step](images/ss13.png)
+![Step](Lab3(12).png)
+![Step](Lab3(13).png)
 
 ---
 
@@ -455,13 +455,13 @@ echo "<h1>Aditya Sharma - 500122015</h1>" > html/index.html
 docker run -d -p 8083:80 -v $(pwd)/html:/usr/share/nginx/html nginx
 ```
 
-![Step](images/ss14.png)
-![Step](images/ss15.png)
+![Step](Lab3(14).png)
+![Step](Lab3(15).png)
 
 ---
 
 # 🔁 Reverse Proxy (Concept)
-![Step](images/ss16.png)
+![Step](Lab3(16).png)
 
 NGINX can:
 - Act as reverse proxy
@@ -712,7 +712,7 @@ docker run -it --name test-container ubuntu /bin/bash
 cat message.txt
 # ERROR: File doesn't exist! Data was lost.
 ```
-![](Screenshots-2/Screenshot%202026-04-04%20081108.png)
+![](Screenshot%202026-04-04%20081108.png)
 
 
 
@@ -733,7 +733,7 @@ docker volume ls
 docker inspect web1 | grep -A 5 Mounts
 ```
 
-![](Screenshots-2/Screenshot%202026-04-04%20081149.png)
+![](Screenshot%202026-04-04%20081149.png)
 
 #### **2. Named Volumes**
 ```bash
@@ -750,7 +750,7 @@ docker volume ls
 # Inspect volume
 docker volume inspect mydata
 ```
-![](Screenshots-2/Screenshot%202026-04-04%20081331.png)
+![](Screenshot%202026-04-04%20081331.png)
 
 
 #### **3. Bind Mounts (Host Directory)**
@@ -768,7 +768,7 @@ echo "From Host" > ~/myapp-data/host-file.txt
 docker exec web3 cat /app/data/host-file.txt
 # Shows: From Host
 ```
-![](Screenshots-2/Screenshot%202026-04-04%20081541.png)
+![](Screenshot%202026-04-04%20081541.png)
 
 
 ---
@@ -795,7 +795,7 @@ docker run -d \
   mysql:8.0
 # Data is preserved!
 ```
-![](Screenshots-2/Screenshot%202026-04-04%20081741.png)
+![](Screenshot%202026-04-04%20081741.png)
 
 #### **Example 2: Web App with Configuration Files**
 ```bash
@@ -821,7 +821,7 @@ docker run -d \
 # Test
 curl http://localhost:8080
 ```
-![](Screenshots-2/Screenshot%202026-04-04%20081849.png)
+![](Screenshot%202026-04-04%20081849.png)
 ---
 ### **Lab 4: Volume Management Commands**
 ```bash
@@ -843,7 +843,7 @@ docker volume rm volume-name
 # Copy files to/from volume
 docker cp local-file.txt container-name:/path/in/volume
 ```
-![](Screenshots-2/Screenshot%202026-04-04%20082217.png)
+![](Screenshot%202026-04-04%20082217.png)
 
 ---
 
@@ -1479,8 +1479,8 @@ docker rm lab-nginx
 
 ### Screenshot – Browser Output
 
-![nginx browser output](Screenshots/docker-html.png)
-![nginx browser output](Screenshots/docker-browser.png)
+![nginx browser output](docker-html.png)
+![nginx browser output](docker-browser.png)
 
 ---
 
@@ -1519,8 +1519,8 @@ docker compose down
 
 ### Screenshot – Compose Containers
 
-![compose ps](Screenshots/Screen_1.png)
-![compose ps](Screenshots/Screen_2.png)
+![compose ps](Screen_1.png)
+![compose ps](Screen_2.png)
 
 ---
 
@@ -1565,9 +1565,9 @@ http://localhost:8082
 
 ### Screenshot – WordPress Setup Page
 
-![wordpress setup](Screenshots/Screen_3.png)
-![wordpress setup](Screenshots/Screen_4.png)
-![wordpress setup](Screenshots/Screen_5.png)
+![wordpress setup](Screen_3.png)
+![wordpress setup](Screen_4.png)
+![wordpress setup](Screen_5.png)
 
 ---
 
@@ -1614,8 +1614,8 @@ docker compose down -v
 
 ### Screenshot – Compose WordPress Containers
 
-![wordpress compose](Screenshots/Screen_6.png)
-![wordpress compose](Screenshots/Screen_7.png)
+![wordpress compose](Screen_6.png)
+![wordpress compose](Screen_7.png)
 
 ---
 
@@ -1711,8 +1711,8 @@ docker images
 
 ### Screenshot – Node App Output
 
-![node app](Screenshots/Screen_9.png)
-![node app](Screenshots/Screen_10.png)
+![node app](Screen_9.png)
+![node app](Screen_10.png)
 
 ---
 
@@ -3611,7 +3611,7 @@ kubectl get pods
 kubectl get svc
 ```
 
-![Cleanup](../Screenshots/Exp12/12g.png)
+![Cleanup](12g.png)
 
 **Observation:**
 - `service "wordpress-service" deleted from default namespace`
